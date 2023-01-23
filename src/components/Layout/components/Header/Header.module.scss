@@ -29,6 +29,12 @@
   // width: 100%;
 }
 
+.search,
+.search-results {
+  width: 360px;
+  height: 100%;
+}
+
 .search {
   top: 5px;
   position: relative;
@@ -51,7 +57,7 @@
     padding: 12px 0;
     height: 100%;
     color: var(--black-color);
-    caret-color: red;
+    caret-color: red; // mau thanh chu
   }
 
   input:not(:placeholder-shown) ~ .search-btn {
@@ -73,6 +79,11 @@
   &:focus-within {
     border: 1.5px solid rgba(22, 24, 35, 0.2);
   }
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
 }
 
 .clear,
@@ -104,4 +115,11 @@
   &:active {
     background-color: rgba(22, 24, 35, 0.06);
   }
+}
+
+.search-title {
+  color: grey;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 6px 16px;
 }

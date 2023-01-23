@@ -1,19 +1,37 @@
+import { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
+import AccountItem from "~/components/AccountItem";
 // import images from "~/assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
   faMagnifyingGlass,
-  faMagnifyingGlassChart,
+  // faMagnifyingGlassChart,
   faSpinner
 } from "@fortawesome/free-solid-svg-icons";
 
 import Tippy from "@tippyjs/react/headless";
+
+import { Wrapper as PopperWrapper } from "~/components/Popper";
 import "tippy.js/dist/tippy.css";
+
 const cx = classNames.bind(styles);
 
 function Header() {
+  // tao mang chua cac search results
+  const [searchResult, setSearchResult] = useState([]);
+
+  useEffect(() => {
+    // const user = JSON.parse(localStorage.getItem("user"));
+    // setUser(user);
+    setSearchResult([1, 2, 3]);
+    setTimeout(() => {}, 3000);
+  }, []);
+
+  // return (
+  //   <header className={cx("header")}>
+
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
@@ -93,32 +111,42 @@ function Header() {
           </svg>
         </div>
 
-        <div className={cx("search")}>
-          <input
-            type="text"
-            placeholder="Search accounts and videos"
-            spellCheck={false}
-          />
+        <Tippy
+          interactive
+          visible={searchResult.length > 0}
+          render={(attrs) => (
+            <div className={cx("search-results")} tabIndex="-1" {...attrs}>
+              <PopperWrapper>
+                <h4 className={cx("search-title")}>
+                  Searching Result (Accounts)
+                </h4>
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+              </PopperWrapper>
+            </div>
+          )}
+        >
+          <div className={cx("search")}>
+            <input
+              type="text"
+              placeholder="Search accounts and videos"
+              spellCheck={false}
+            />
 
-          <button className={cx("clear")}>
-            {/* {Clear} */}
-            <FontAwesomeIcon icon={faCircleXmark} />
-          </button>
+            <button className={cx("clear")}>
+              {/* {Clear} */}
+              <FontAwesomeIcon icon={faCircleXmark} />
+            </button>
 
-          <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
+            <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
 
-          <Tippy
-            render={(attrs) => (
-              <div className={cx("search-results")} tabIndex="-1" {...attrs}>
-                Searching Result
-              </div>
-            )}
-          >
             <button className={cx("search-btn")}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
-          </Tippy>
-        </div>
+          </div>
+        </Tippy>
 
         <div className={cx("actions")}>
           <div className={cx("Abcd")}>Abcd</div>

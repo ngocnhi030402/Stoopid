@@ -5,8 +5,13 @@ import styles from "./Button.module.scss";
 
 const cx = classNames.bind(styles);
 
-function Button({ to, href, children, onClick }) {
+function Button({ to, href, primary, children, onClick }) {
   let Component = "button";
+
+  const props = {};
+
+  if (to) {
+  }
 
   const classes = cx("wrapper");
 

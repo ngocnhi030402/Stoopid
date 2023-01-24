@@ -27,7 +27,7 @@ function Header() {
   useEffect(() => {
     // const user = JSON.parse(localStorage.getItem("user"));
     // setUser(user);
-    setSearchResult([1, 2, 3]);
+    setSearchResult([]);
     setTimeout(() => {}, 3000);
   }, []);
 
@@ -149,9 +149,11 @@ function Header() {
             </button>
           </div>
         </Tippy>
-
         <div className={cx("actions")}>
-          <Button> Log in </Button>
+          <Button text>Upload</Button>
+          <Button primary rounded>
+            Log in
+          </Button>
         </div>
       </div>
     </header>

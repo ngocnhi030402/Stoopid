@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
+<<<<<<< HEAD
 function Button({
   to,
   href,
@@ -56,6 +57,17 @@ function Button({
     small,
     large
   });
+=======
+function Button({ to, href, primary, children, onClick }) {
+  let Component = "button";
+
+  const props = {};
+
+  if (to) {
+  }
+
+  const classes = cx("wrapper");
+>>>>>>> 98ccacd99b5461dce0fb51526b6c0dcdc1d395df
 
   return (
     <Comp className={classes} {...props}>

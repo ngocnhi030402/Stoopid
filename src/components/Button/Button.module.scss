@@ -15,6 +15,7 @@
   border-radius: 4px;
   font-size: 1.6rem;
   font-weight: 700;
+<<<<<<< HEAD
   cursor: pointer;
   background-color: var(--white-color);
   border: 1px solid transparent;
@@ -81,4 +82,14 @@
 .large {
   min-width: 124px;
   padding: 14px 16px;
+=======
+  min-width: 100px;
+  border-radius: 4px;
+  padding: 9px 17px;
+  position: relative;
+  padding-top: 20px;
+}
+.actions {
+  padding: 5px 0px;
+>>>>>>> 98ccacd99b5461dce0fb51526b6c0dcdc1d395df
 }

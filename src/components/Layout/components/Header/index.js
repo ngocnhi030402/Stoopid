@@ -6,7 +6,9 @@ import AccountItem from "~/components/AccountItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
+  faEllipsisVertical,
   faMagnifyingGlass,
+  // faSignIn,
   // faMagnifyingGlassChart,
   faSpinner
 } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +19,7 @@ import { Wrapper as PopperWrapper } from "~/components/Popper";
 import "tippy.js/dist/tippy.css";
 
 import Button from "~/components/Button";
-
+import Menu from "~/components/Popper/Menu";
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -149,11 +151,21 @@ function Header() {
             </button>
           </div>
         </Tippy>
+
         <div className={cx("actions")}>
-          <Button text>Upload</Button>
-          <Button primary rounded>
+          <Button outline text>
+            Upload
+          </Button>
+          <Button primary>
+            {/* className={cx("custom-login")} */}
             Log in
           </Button>
+
+          <Menu>
+            <button className={cx("moreBtn")}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>

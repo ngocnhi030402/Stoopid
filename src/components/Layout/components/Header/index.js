@@ -153,7 +153,6 @@ function Header() {
         </Tippy>
 
         <div className={cx("actions")}>
-<<<<<<< HEAD
           <Button outline text>
             Upload
           </Button>
@@ -167,9 +166,6 @@ function Header() {
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
           </Menu>
-=======
-          <Button primary> Log in </Button>
->>>>>>> 98ccacd99b5461dce0fb51526b6c0dcdc1d395df
         </div>
       </div>
     </header>
